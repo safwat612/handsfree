@@ -48,6 +48,9 @@ function f9() {
     document.getElementById("textarea1").value = " ";
 }
 
+
+
+function start() {
 webgazer.setGazeListener(function(data, elapsedTime) {
     if (data == null) {
         return;
@@ -63,3 +66,6 @@ if (prediction) {
     var x = prediction.x;
     var y = prediction.y;
 }
+
+
+}	
