@@ -29,8 +29,8 @@
     <!--Internal CSS start-->
     <style>
         h1 {
-            padding-top: 40px;
-            padding-bottom: 40px;
+            padding-top: 10px;
+            padding-bottom: 10px;
             text-align: center;
             color: #957dad;
             font-family: 'Montserrat', sans-serif;
@@ -39,7 +39,7 @@
         section {
             padding: 5%;
             padding-top: 0;
-            height: 100vh;
+            height: 80vh;
         }
           
         .side {
@@ -48,25 +48,41 @@
           
         button {
             margin: 10px;
-            border-color: #957dad !important;
-            color: #888888 !important;
+            border-color: #957dad;
+            color: #888888 ;
             margin-bottom: 25px;
         }
-          
-        button:hover {
-            background-color: #fec8d8 !important;
-        }
-          
-        textarea {
-            padding: 3%;
-            border-color: #957dad;
-            border-width: thick;
-        }
-          
+
         .flex-box {
             display: flex;
             justify-content: center;
         }
+
+        .yesBox{
+        padding: 20px;
+        background-color: #2E8B57;
+        color: white;
+        text-align: center;
+        justify-content: space-between;
+        }
+
+        .noBox{
+        padding: 20px;
+        background-color: #f44336;
+        color: white;
+        text-align: center;
+        justify-content: space-between;
+        }
+
+        #question{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 35px;
+            text-align: center;
+            color: #957dad;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
     </style>
     
 	
@@ -81,121 +97,36 @@
 <!--Body start-->
   
 <body>
-    <section class="">
-        <h1 class="shadow-sm">TEXT EDITOR</h1>
-        <div class="flex-box">
-            <div class="row">
-                <div class="col">
-                    <!-- Adding different buttons for
-                         different functionality-->
-                    <!--onclick attribute is added to give 
-                        button a work to do when it is clicked-->
-                    <button type="button" 
-                            onclick="f1()" 
-                            class=" shadow-sm btn btn-outline-secondary" 
-                            data-toggle="tooltip"
-                            data-placement="top" 
-                            title="Bold Text">
-            Bold</button>
-                    <button type="button" 
-                            onclick="f2()" 
-                            class="shadow-sm btn btn-outline-success" 
-                            data-toggle="tooltip" 
-                            data-placement="top" 
-                            title="Italic Text">
-            Italic</button>
-                    <button type="button" 
-                            onclick="f3()" 
-                            class=" shadow-sm btn btn-outline-primary" 
-                            data-toggle="tooltip" 
-                            data-placement="top"
-                            title="Left Align">
-            <i class="fas fa-align-left"></i></button>
-                    <button type="button" 
-                            onclick="f4()" 
-                            class="btn shadow-sm btn-outline-secondary" 
-                            data-toggle="tooltip" 
-                            data-placement="top" 
-                            title="Center Align">
-            <i class="fas fa-align-center"></i></button>
-                    <button type="button" 
-                            onclick="f5()" 
-                            class="btn shadow-sm btn-outline-primary" 
-                            data-toggle="tooltip" 
-                            data-placement="top" 
-                            title="Right Align">
-            <i class="fas fa-align-right"></i></button>
-                    <button type="button" 
-                            onclick="f6()" 
-                            class="btn shadow-sm btn-outline-secondary" 
-                            data-toggle="tooltip" 
-                            data-placement="top" 
-                            title="Uppercase Text">
-            Upper Case</button>
-                    <button type="button" 
-                            onclick="f7()" 
-                            class="btn shadow-sm btn-outline-primary" 
-                            data-toggle="tooltip" 
-                            data-placement="top" 
-                            title="Lowercase Text">
-            Lower Case</button>
-                    <button type="button" 
-                            onclick="f8()" 
-                            class="btn shadow-sm btn-outline-primary" 
-                            data-toggle="tooltip" 
-                            data-placement="top" 
-                            title="Capitalize Text">
-            Capitalize</button>
-                    <button type="button" 
-                            onclick="f9()" 
-                            class="btn shadow-sm btn-outline-primary side" 
-                            data-toggle="tooltip" 
-                            data-placement="top" 
-                            title="Tooltip on top">
-            Clear Text</button>
-			
-			
+   
+      <section class="">
 					<button type="button"
 					onclick="start()"class="btn shadow-sm btn-outline-primary side" 
                             data-toggle="tooltip" 
                             data-placement="top" 
-                            title="Tooltip on top"	>Click Me</button>
-					
-							
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-md-3 col-sm-3">
-            </div>
-            <div class="col-md-6 col-sm-9">
-                <div class="flex-box">
-                    <textarea id="textarea1" 
-                              class="input shadow" 
-                              name="name" 
-                              rows="15" 
-                              cols="100" 
-                              placeholder="Your text here ">
-                    </textarea>
-                </div>
-            </div>
-            <div class="col-md-3">
-            </div>
-        </div>
-        <!--Virtual Keyboard-->
-  <div class="simple-keyboard"></div>
+                            title="Tooltip on top">Click Me for eye tracker</button>
 
-  <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.js"></script>
-  <script src="src/index.js"></script>
-  
-    </section>
-    <br>
-    <br>
+                            <div style="display: none;" class="yesBox">
+                                you selected YES 
+                            </div>
+                            <div style="display: none;" class="noBox">
+                                you selected NO 
+                            </div>
+
+            
+         <!--<h1>Did you like the service?</h1>-->
+            <div id="question">Click on next question to start</div> 
+            
+           
+ 
+    <button style="height: 100%; width: 45%; border: none; float: left;" type="button" id="myBtn" onclick="selectedState()">YES</button>
+    <button style="height: 100%; width: 45%; border: none; float: right;" type="button" id="myBtn2"onclick="selectedState2()">NO</button>
+      </section>
+    
+      <button id="nextBtn"> Next Question </button>
 
     <!--External JavaScript file-->
     <script src="home.js"></script>
-    <script src="keyboard.js"></script>
+   
 </body>
   
 </html>
